@@ -10,6 +10,7 @@ class ArrayLists {
             numbers.add(6);  // index = 2
             numbers.add(8);  // index = 3 
             numbers.add(10);
+            numbers.add(11)
             // Here I want to print "6" so I will put its Index which is "2" below.
             System.out.println(numbers.get(2));
           
