@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "FileReader",
+            "request": "launch",
+            "mainClass": "FileReader",
+            "projectName": "coding_cfda927c"
+        },
+        {
+            "type": "java",
             "name": "NineTeenJan",
             "request": "launch",
             "mainClass": "NineTeenJan",
