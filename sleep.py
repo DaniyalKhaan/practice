@@ -1,25 +1,17 @@
-import time
-import random
-import threading
-import math
-def thisFunctionPrintTables():
-    randomTableNumber = math.floor(random.uniform(1,11))
-    for i in range(1, 11):
+import openpyxl
+def loadDataFromExcel():
+    wb = openpyxl.load_workbook('saveMe.xlsx')
+    sheet = wb.active
 
-        print(f"{randomTableNumber} X {i} = {randomTableNumber * i}")
-
-
-
-def random_timer(executionNumber):
-    for n in range (executionNumber):
-        delay = math.floor(random.uniform(0, 10))
-        print(f"next table will be printed after {delay} seconds")
-        time.sleep(delay)
-        thisFunctionPrintTables()
+    # Iterate through rows in the sheet
+    for row in sheet.iter_rows(values_only=True):
+        # Update the "Sent" column for the sent row
+        sheet.cell(row=1, column=1, value="AAAAa")
+    # Save the changes to the Excel file
+    wb.save('saveMe.xlsx')
 
 
-thisFunctionPrintTables()
-executionNumber = 10;
-thread = threading.Thread(target=random_timer, args=(executionNumber,))
-thread.start()
+# Example usage:
+# Send additional 10 emails (assuming 10 emails are already sent)
+loadDataFromExcel()
 
